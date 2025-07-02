@@ -19,7 +19,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    volumes:
-      - ./head2head-frontend:/app
+    #volumes:
+    #  - ./head2head-frontend:/app
+    command: sh -c "npm install && npm start"
     environment:
       CHOKIDAR_USEPOLLING: "true"  # Watches file changes on Docker-for-Windows/Mac
